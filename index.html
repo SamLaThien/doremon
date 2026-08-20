@@ -144,19 +144,27 @@
         background: rgba(255, 255, 255, 0.6) !important; 
     }
     
-    /* Chữ tên món ăn: Giữ lại hiệu ứng phát sáng để dễ đọc chữ trên nền tối */
+        /* Chỉ thay đổi CSS chữ tên món ăn để nổi trội hơn */
     .item-card h4 { 
-        font-size: 13px; 
-        font-weight: 800;
+        font-size: 15px; /* Tăng kích thước chữ to hơn */
+        font-weight: 900; /* In đậm tối đa */
         height: auto; 
-        min-height: 32px;
+        min-height: 38px;
         margin-bottom: 10px; 
-        color: #111; 
+        color: #000000; /* Màu đen tuyền sắc nét */
         display: -webkit-box; 
         -webkit-line-clamp: 2; 
         -webkit-box-orient: vertical; 
-        text-shadow: 0 0 5px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,1); 
+        
+        /* Tạo lớp viền trắng dày bọc quanh chữ và phát sáng nhẹ */
+        text-shadow: 
+            -1.5px -1.5px 0 #fff,  
+             1.5px -1.5px 0 #fff,
+            -1.5px  1.5px 0 #fff,
+             1.5px  1.5px 0 #fff,
+             0px 4px 8px rgba(255, 255, 255, 0.9);
     }
+
 
 
         
