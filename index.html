@@ -121,16 +121,16 @@
     }
     .category-group:first-child .category-group-title { margin-top: 0; }
 
-        /* Ô món ăn: Trắng gần như hoàn toàn, tắt làm mờ để viền và nền cực kỳ sắc nét */
+/* Ô món ăn: Hiệu ứng kính mờ (Glassmorphism) giống hệt khung ảnh menu */
     .item-card { 
-        background: rgba(255, 255, 255, 0.95) !important; /* Tăng độ trắng lên 95%, che gần hết ảnh nền phía dưới */
-        backdrop-filter: none !important; /* QUAN TRỌNG: Tắt hẳn hiệu ứng blur để màu ảnh nền không bị lem lên */
-        -webkit-backdrop-filter: none !important;
+        background: rgba(255, 255, 255, 0.25) !important; /* Lớp nền trắng mỏng để tạo độ đục như kính */
+        backdrop-filter: blur(15px) !important; /* Blur MẠNH (15px) để làm mịn hoàn toàn ảnh nền phía sau, không bị nham nhở */
+        -webkit-backdrop-filter: blur(15px) !important;
         padding: 16px 10px; 
         border-radius: 16px; 
         text-align: center; 
-        border: 1px solid #fff !important; /* Viền trắng tinh 100% */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Tăng bóng đổ một chút để ô món ăn nổi bật hẳn lên */
+        border: 1px solid rgba(255, 255, 255, 0.6) !important; /* Viền trắng mảnh tạo cảm giác các cạnh của tấm kính */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Bóng đổ nhẹ giúp tấm kính nổi lên */
         transition: transform 0.15s;
         cursor: pointer;
         display: flex;
@@ -141,25 +141,23 @@
     
     .item-card:active { 
         transform: scale(0.95); 
-        background: #fff !important; /* Bấm vào thì trắng tinh luôn */
+        background: rgba(255, 255, 255, 0.4) !important; 
     }
-
     
-    /* Chữ tên món ăn: Bỏ viền bóng để chữ sắc nét tuyệt đối */
+    /* Chữ tên món ăn: Thêm hiệu ứng phát sáng nhẹ để chữ đen không bị chìm nếu nền kính đi qua mảng tối */
     .item-card h4 { 
         font-size: 13px; 
         font-weight: 800;
         height: auto; 
         min-height: 32px;
         margin-bottom: 10px; 
-        color: #1e293b; 
+        color: #111; 
         display: -webkit-box; 
         -webkit-line-clamp: 2; 
         -webkit-box-orient: vertical; 
-        text-shadow: none; /* Quan trọng: Xóa text-shadow để chữ không bị lem nhem */
+        text-shadow: 0 0 5px rgba(255,255,255,0.9), 0 0 10px rgba(255,255,255,0.9); /* Lớp viền sáng trắng bao quanh chữ */
     }
-
-    
+        
     /* Giá tiền được bao bọc bởi một viên thuốc trắng nhỏ */
     .item-card b { 
         color: #d35400; /* Màu cam đậm */
