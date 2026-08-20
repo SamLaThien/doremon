@@ -94,45 +94,41 @@
         overflow-y: visible;
         padding-bottom: 80px;
     }
-
-    /* TIÊU ĐỀ DANH MỤC */
+            /* 1. TIÊU ĐỀ DANH MỤC: Nền trắng bán trong suốt */
     .category-group-title {
         font-size: 14px;
         font-weight: 900;
         color: #1e293b;
-        background: transparent !important; 
-        padding: 6px 0px;
+        background: rgba(255, 255, 255, 0.85) !important; /* Trắng đục 85% */
+        backdrop-filter: blur(4px) !important; /* Làm mờ nhẹ chi tiết ảnh nền ngay sau tiêu đề */
+        -webkit-backdrop-filter: blur(4px) !important;
+        padding: 6px 12px;
         margin: 15px 0 8px 0;
         border-radius: 6px;
         display: inline-block;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0px 0px 5px rgba(255,255,255,1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-shadow: none; /* Bỏ bóng chữ đi cho thanh thoát */
     }
     .category-group:first-child .category-group-title { margin-top: 0; }
 
-    .items-grid { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
-        gap: 10px; 
-    }
-    
-    /* 2. Ô MÓN ĂN: XÓA SẠCH NỀN VÀ ĐỘ MỜ (CHỈ GIỮ LẠI ĐƯỜNG VIỀN) */
+    /* 2. Ô MÓN ĂN: Nền trắng bán trong suốt để dễ đọc chữ */
     .item-card { 
-        background: transparent !important; 
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
+        background: rgba(255, 255, 255, 0.85) !important; /* Trắng đục 85% */
+        backdrop-filter: blur(4px) !important; /* Làm mờ nhẹ chi tiết ảnh nền ngay sau ô món ăn */
+        -webkit-backdrop-filter: blur(4px) !important;
         padding: 14px 8px; 
         border-radius: 12px; 
         text-align: center; 
-        border: 1px solid rgba(255, 255, 255, 0.5); 
+        border: 1px solid rgba(255, 255, 255, 0.9); 
         border-bottom: 4px solid #8BC34A; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         transition: transform 0.1s;
         cursor: pointer;
     }
     .item-card:active { transform: scale(0.95); }
     
-    /* Làm viền bóng trắng cho chữ để đọc rõ trên mọi nền ảnh */
     .item-card h4 { 
         font-size: 13px; 
         font-weight: 800;
@@ -143,14 +139,16 @@
         display: -webkit-box; 
         -webkit-line-clamp: 2; 
         -webkit-box-orient: vertical; 
-        text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 0 4px #fff; 
+        text-shadow: none; /* Bỏ viền bóng chữ trắng vì đã có nền lót */
     }
+    
     .item-card b { 
-        color: #d35400; /* Màu cam đậm hơn cho giá tiền */
+        color: #d35400;
         font-size: 15px; 
         font-weight: 900;
-        text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 0 3px #fff; 
+        text-shadow: none; /* Bỏ viền bóng chữ trắng */
     }
+
 
     /* FLOATING CART BUTTON */
     .cart-fab {
