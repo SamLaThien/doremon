@@ -121,16 +121,16 @@
     }
     .category-group:first-child .category-group-title { margin-top: 0; }
 
-/* Ô món ăn: Hiệu ứng kính mờ (Glassmorphism) giống hệt khung ảnh menu */
+            /* Ô món ăn: Bỏ hoàn toàn Blur, dùng nền trắng mờ 40% y hệt khung bọc menu */
     .item-card { 
-        background: rgba(255, 255, 255, 0.25) !important; /* Lớp nền trắng mỏng để tạo độ đục như kính */
-        backdrop-filter: blur(15px) !important; /* Blur MẠNH (15px) để làm mịn hoàn toàn ảnh nền phía sau, không bị nham nhở */
-        -webkit-backdrop-filter: blur(15px) !important;
+        background: rgba(255, 255, 255, 0.4) !important; /* Giống hệt màu nền của .menu-image-container */
+        backdrop-filter: none !important; /* Tắt hẳn hiệu ứng nhòe (blur) */
+        -webkit-backdrop-filter: none !important;
         padding: 16px 10px; 
-        border-radius: 16px; 
+        border-radius: 10px; /* Để 10px cho giống độ bo tròn của khung trên */
         text-align: center; 
-        border: 1px solid rgba(255, 255, 255, 0.6) !important; /* Viền trắng mảnh tạo cảm giác các cạnh của tấm kính */
-        box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Bóng đổ nhẹ giúp tấm kính nổi lên */
+        border: 1px solid rgba(255, 255, 255, 0.5) !important; /* Viền trắng mảnh y hệt khung trên */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02); /* Bóng nhẹ nhàng */
         transition: transform 0.15s;
         cursor: pointer;
         display: flex;
@@ -141,10 +141,10 @@
     
     .item-card:active { 
         transform: scale(0.95); 
-        background: rgba(255, 255, 255, 0.4) !important; 
+        background: rgba(255, 255, 255, 0.6) !important; 
     }
     
-    /* Chữ tên món ăn: Thêm hiệu ứng phát sáng nhẹ để chữ đen không bị chìm nếu nền kính đi qua mảng tối */
+    /* Chữ tên món ăn: Giữ lại hiệu ứng phát sáng để dễ đọc chữ trên nền tối */
     .item-card h4 { 
         font-size: 13px; 
         font-weight: 800;
@@ -155,8 +155,10 @@
         display: -webkit-box; 
         -webkit-line-clamp: 2; 
         -webkit-box-orient: vertical; 
-        text-shadow: 0 0 5px rgba(255,255,255,0.9), 0 0 10px rgba(255,255,255,0.9); /* Lớp viền sáng trắng bao quanh chữ */
+        text-shadow: 0 0 5px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,1); 
     }
+
+
         
     /* Giá tiền được bao bọc bởi một viên thuốc trắng nhỏ */
     .item-card b { 
