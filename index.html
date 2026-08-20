@@ -94,60 +94,82 @@
         overflow-y: visible;
         padding-bottom: 80px;
     }
-            /* 1. TIÊU ĐỀ DANH MỤC: Nền trắng bán trong suốt */
+            /* 1. Sắp xếp lại lưới thành 2 cột cho cân đối, gọn gàng */
+    .items-grid { 
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 12px; 
+    }
+
+    /* 2. Tiêu đề danh mục: Chuyển sang dạng viên thuốc màu đen mờ sang trọng */
     .category-group-title {
-        font-size: 14px;
-        font-weight: 900;
-        color: #1e293b;
-        background: rgba(255, 255, 255, 0.85) !important; /* Trắng đục 85% */
-        backdrop-filter: blur(4px) !important; /* Làm mờ nhẹ chi tiết ảnh nền ngay sau tiêu đề */
-        -webkit-backdrop-filter: blur(4px) !important;
-        padding: 6px 12px;
-        margin: 15px 0 8px 0;
-        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 800;
+        color: #fff; /* Chữ màu trắng */
+        background: rgba(0, 0, 0, 0.55) !important; /* Nền đen bán trong suốt */
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        padding: 8px 16px;
+        margin: 20px 0 10px 0;
+        border-radius: 20px;
         display: inline-block;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        text-shadow: none; /* Bỏ bóng chữ đi cho thanh thoát */
+        letter-spacing: 1px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-shadow: none;
     }
     .category-group:first-child .category-group-title { margin-top: 0; }
 
-    /* 2. Ô MÓN ĂN: Nền trắng bán trong suốt để dễ đọc chữ */
+    /* 3. Ô món ăn: Hiệu ứng kính mờ (Glassmorphism) chuẩn tinh tế */
     .item-card { 
-        background: rgba(255, 255, 255, 0.85) !important; /* Trắng đục 85% */
-        backdrop-filter: blur(4px) !important; /* Làm mờ nhẹ chi tiết ảnh nền ngay sau ô món ăn */
-        -webkit-backdrop-filter: blur(4px) !important;
-        padding: 14px 8px; 
-        border-radius: 12px; 
+        background: rgba(255, 255, 255, 0.2) !important; /* Lớp trắng rất mỏng (20%) để thấy rõ ảnh nền */
+        backdrop-filter: blur(12px) !important; /* Blur mạnh (12px) để nhòe ảnh nền, giúp chữ cực kỳ dễ đọc */
+        -webkit-backdrop-filter: blur(12px) !important;
+        padding: 16px 10px; 
+        border-radius: 16px; 
         text-align: center; 
-        border: 1px solid rgba(255, 255, 255, 0.9); 
-        border-bottom: 4px solid #8BC34A; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        transition: transform 0.1s;
+        border: 1px solid rgba(255, 255, 255, 0.6) !important; /* Viền trắng mảnh như viền pha lê */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important; /* Xóa viền xanh cũ */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Đổ bóng tạo chiều sâu nổi lên trên ảnh */
+        transition: transform 0.15s;
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
-    .item-card:active { transform: scale(0.95); }
+    .item-card:active { 
+        transform: scale(0.95); 
+        background: rgba(255, 255, 255, 0.4) !important; 
+    }
     
     .item-card h4 { 
         font-size: 13px; 
         font-weight: 800;
-        height: 32px; 
-        overflow: hidden; 
-        margin-bottom: 6px; 
-        color: #111; 
+        height: auto; 
+        min-height: 32px;
+        margin-bottom: 10px; 
+        color: #1e293b; 
         display: -webkit-box; 
         -webkit-line-clamp: 2; 
         -webkit-box-orient: vertical; 
-        text-shadow: none; /* Bỏ viền bóng chữ trắng vì đã có nền lót */
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9); /* Viền sáng nhẹ quanh chữ */
     }
     
+    /* Giá tiền được bao bọc bởi một viên thuốc trắng nhỏ */
     .item-card b { 
-        color: #d35400;
-        font-size: 15px; 
+        color: #d35400; /* Màu cam đậm */
+        font-size: 14px; 
         font-weight: 900;
-        text-shadow: none; /* Bỏ viền bóng chữ trắng */
+        background: rgba(255, 255, 255, 0.85); /* Nền trắng lót riêng cho giá */
+        padding: 4px 12px;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        text-shadow: none;
     }
+    
+
 
 
     /* FLOATING CART BUTTON */
