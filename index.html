@@ -122,16 +122,16 @@
     .category-group:first-child .category-group-title { margin-top: 0; }
 
     /* 3. Ô món ăn: Hiệu ứng kính mờ (Glassmorphism) chuẩn tinh tế */
+        /* Ô món ăn: Trắng trẻo, sạch sẽ, dễ đọc chữ nhưng vẫn hơi mờ nhẹ để thấy nền */
     .item-card { 
-        background: rgba(255, 255, 255, 0.2) !important; /* Lớp trắng rất mỏng (20%) để thấy rõ ảnh nền */
-        backdrop-filter: blur(12px) !important; /* Blur mạnh (12px) để nhòe ảnh nền, giúp chữ cực kỳ dễ đọc */
-        -webkit-backdrop-filter: blur(12px) !important;
+        background: rgba(255, 255, 255, 0.75) !important; /* Tăng độ trắng lên 75% để chữ đen luôn nổi bật */
+        backdrop-filter: blur(5px) !important; /* Giảm blur để đỡ bị nhiễu màu từ hạt cafe */
+        -webkit-backdrop-filter: blur(5px) !important;
         padding: 16px 10px; 
         border-radius: 16px; 
         text-align: center; 
-        border: 1px solid rgba(255, 255, 255, 0.6) !important; /* Viền trắng mảnh như viền pha lê */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important; /* Xóa viền xanh cũ */
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Đổ bóng tạo chiều sâu nổi lên trên ảnh */
+        border: 1px solid rgba(255, 255, 255, 0.9) !important; /* Viền trắng nét căng */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* Bóng đổ nhẹ nhàng */
         transition: transform 0.15s;
         cursor: pointer;
         display: flex;
@@ -139,11 +139,13 @@
         justify-content: space-between;
         align-items: center;
     }
+    
     .item-card:active { 
         transform: scale(0.95); 
-        background: rgba(255, 255, 255, 0.4) !important; 
+        background: rgba(255, 255, 255, 0.9) !important; 
     }
     
+    /* Chữ tên món ăn: Bỏ viền bóng để chữ sắc nét tuyệt đối */
     .item-card h4 { 
         font-size: 13px; 
         font-weight: 800;
@@ -154,8 +156,9 @@
         display: -webkit-box; 
         -webkit-line-clamp: 2; 
         -webkit-box-orient: vertical; 
-        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9); /* Viền sáng nhẹ quanh chữ */
+        text-shadow: none; /* Quan trọng: Xóa text-shadow để chữ không bị lem nhem */
     }
+
     
     /* Giá tiền được bao bọc bởi một viên thuốc trắng nhỏ */
     .item-card b { 
