@@ -21,18 +21,22 @@
     }
 
     body { 
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-        background-image: url('nen.jpg'); /* Thay link ảnh nền của bạn */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: scroll !important; 
-        color: var(--text);
-        height: auto !important;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        overflow: auto !important;
-    }
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    background-image: url('nen.jpg'); /* Thay link ảnh nền của bạn */
+    
+    /* 2 Dòng dưới đây là mấu chốt để sửa lỗi phóng to: */
+    background-size: 100% auto !important; /* Ép ảnh hiển thị vừa đúng 100% chiều ngang màn hình, chiều dọc tự co giãn tỷ lệ chuẩn */
+    background-repeat: repeat-y !important; /* Nếu danh sách menu dài hơn bức ảnh, ảnh sẽ tự nối tiếp (lặp lại) xuống dưới để không bị khoảng trắng */
+    
+    background-attachment: scroll !important; 
+    color: var(--text);
+    height: auto !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto !important;
+}
+
 
     /* 1. KHUNG MENU TỔNG: XÓA SẠCH NỀN VÀ ĐỘ MỜ */
     .menu-section { 
