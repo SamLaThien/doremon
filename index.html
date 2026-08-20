@@ -33,16 +33,16 @@
         overflow: auto !important;
     }
 
-    /* Khung menu tổng: Trong suốt nhiều hơn (0.2) */
+    /* Khung menu tổng: Trong suốt nhẹ */
     .menu-section { 
         flex: 1; 
         display: flex; 
         flex-direction: column; 
         padding: 12px; 
         overflow: visible;
-        background: rgba(255, 255, 255, 0.15) !important; 
-        backdrop-filter: blur(8px) !important;
-        -webkit-backdrop-filter: blur(8px) !important;
+        background: rgba(255, 255, 255, 0.1) !important; 
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
         border-radius: 16px;
         margin: 10px;
     }
@@ -71,10 +71,10 @@
         flex-shrink: 0;
         margin-bottom: 10px;
         text-align: center;
-        background: rgba(255, 255, 255, 0.3) !important;
+        background: rgba(255, 255, 255, 0.2) !important;
         padding: 8px;
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.3);
     }
     .menu-image-container img {
         width: 100%;
@@ -91,13 +91,12 @@
         padding-bottom: 80px;
     }
 
-    /* TIÊU ĐỀ DANH MỤC: Làm trong suốt */
+    /* Tiêu đề danh mục: Trong suốt */
     .category-group-title {
         font-size: 13px;
         font-weight: 800;
         color: #1e293b;
-        background: rgba(255, 255, 255, 0.5) !important; 
-        backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.3) !important; 
         padding: 6px 12px;
         margin: 15px 0 8px 0;
         border-radius: 6px;
@@ -113,23 +112,23 @@
         gap: 10px; 
     }
     
-    /* Ô MÓN ĂN (ITEM CARD): Làm trong suốt bán phần để thấy ảnh nền */
+    /* Ô MÓN ĂN (ITEM CARD): Cho nền trong suốt hoàn toàn (hoặc rất mờ 0.15) để thấy ảnh nền */
     .item-card { 
-        background: rgba(255, 255, 255, 0.65) !important; 
-        backdrop-filter: blur(4px) !important;
-        -webkit-backdrop-filter: blur(4px) !important;
+        background: rgba(255, 255, 255, 0.2) !important; /* Chỉnh số 0.2 này nhỏ xuống nếu muốn trong suốt hơn nữa, hoặc để 'transparent' */
+        backdrop-filter: blur(2px) !important;
+        -webkit-backdrop-filter: blur(2px) !important;
         padding: 14px 8px; 
         border-radius: 12px; 
         text-align: center; 
-        border: 1px solid rgba(255, 255, 255, 0.6); 
+        border: 1px solid rgba(255, 255, 255, 0.4); 
         border-bottom: 4px solid #8BC34A; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         transition: transform 0.1s;
         cursor: pointer;
     }
     .item-card:active { transform: scale(0.95); }
-    .item-card h4 { font-size: 12px; height: 32px; overflow: hidden; margin-bottom: 6px; color: #1e293b; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-    .item-card b { color: var(--accent); font-size: 14px; }
+    .item-card h4 { font-size: 12px; height: 32px; overflow: hidden; margin-bottom: 6px; color: #1e293b; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-shadow: 0 1px 2px rgba(255,255,255,0.8); }
+    .item-card b { color: var(--accent); font-size: 14px; text-shadow: 0 1px 2px rgba(255,255,255,0.8); }
 
     /* FLOATING CART BUTTON */
     .cart-fab {
