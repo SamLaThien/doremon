@@ -121,17 +121,16 @@
     }
     .category-group:first-child .category-group-title { margin-top: 0; }
 
-    /* 3. Ô món ăn: Hiệu ứng kính mờ (Glassmorphism) chuẩn tinh tế */
-        /* Ô món ăn: Trắng trẻo, sạch sẽ, dễ đọc chữ nhưng vẫn hơi mờ nhẹ để thấy nền */
+        /* Ô món ăn: Trắng gần như hoàn toàn, tắt làm mờ để viền và nền cực kỳ sắc nét */
     .item-card { 
-        background: rgba(255, 255, 255, 0.75) !important; /* Tăng độ trắng lên 75% để chữ đen luôn nổi bật */
-        backdrop-filter: blur(5px) !important; /* Giảm blur để đỡ bị nhiễu màu từ hạt cafe */
-        -webkit-backdrop-filter: blur(5px) !important;
+        background: rgba(255, 255, 255, 0.95) !important; /* Tăng độ trắng lên 95%, che gần hết ảnh nền phía dưới */
+        backdrop-filter: none !important; /* QUAN TRỌNG: Tắt hẳn hiệu ứng blur để màu ảnh nền không bị lem lên */
+        -webkit-backdrop-filter: none !important;
         padding: 16px 10px; 
         border-radius: 16px; 
         text-align: center; 
-        border: 1px solid rgba(255, 255, 255, 0.9) !important; /* Viền trắng nét căng */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* Bóng đổ nhẹ nhàng */
+        border: 1px solid #fff !important; /* Viền trắng tinh 100% */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Tăng bóng đổ một chút để ô món ăn nổi bật hẳn lên */
         transition: transform 0.15s;
         cursor: pointer;
         display: flex;
@@ -142,8 +141,9 @@
     
     .item-card:active { 
         transform: scale(0.95); 
-        background: rgba(255, 255, 255, 0.9) !important; 
+        background: #fff !important; /* Bấm vào thì trắng tinh luôn */
     }
+
     
     /* Chữ tên món ăn: Bỏ viền bóng để chữ sắc nét tuyệt đối */
     .item-card h4 { 
